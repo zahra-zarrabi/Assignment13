@@ -1,8 +1,6 @@
 import random
 import sys
-
 import pygame
-import time
 
 class Color:
     black=(0,0,0)
@@ -85,7 +83,6 @@ class Game:
                 me.score+=1
                 ball.new_ball()
 
-
             if me.area.colliderect(ball.area):
                 ball.x_direction *= -1
                 ball.x += 5
@@ -93,13 +90,9 @@ class Game:
                 ball.x_direction *= -1
                 ball.x -= 5
 
-
-
             Game.screen.fill((Color.black))
-
             pygame.draw.rect(Game.screen,Color.white,[0,0,Game.width,Game.height],10)
             pygame.draw.aaline(Game.screen,Color.white,[Game.width/2,0],[Game.width/2,Game.height])
-
             me.show()
             computer.show()
             ball.show()
@@ -113,8 +106,6 @@ class Game:
                 pygame.quit()
                 sys.exit()
 
-
-
             text = pygame.font.Font('COMIC.TTF', 20)
             txt_score_me = text.render('score: %d' % me.score, True, (255, 255, 255))
             txtrect = txt_score_me.get_rect()
@@ -124,7 +115,6 @@ class Game:
             txtrect2.center = (Game.width - 250, 50)
             Game.screen.blit(txt_score_me, txtrect)
             Game.screen.blit(txt_score_computer, txtrect2)
-
             pygame.display.update()
             Game.clock.tick(Game.fps)
 
