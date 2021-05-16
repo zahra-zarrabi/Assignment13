@@ -3,7 +3,7 @@ import pygame
 import sys
 class Color:
     green=(0,0,0)
-    white=(255,7,255)
+    pink=(255,7,255)
     red=(255,0,0)
     blue=(0,0,255)
     yellow=(255,255,0)
